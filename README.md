@@ -55,8 +55,6 @@ This project demonstrates the integration of natural language processing (NLP) f
 6. **Access the app:**
    Open your browser and navigate to `http://127.0.0.1:5000`.
 
-```
-
 ## How It Works
 1. **User Registration and Login**:
    - Users can register with a unique username and password.
