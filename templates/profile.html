@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #007BFF, #89CFF0);
+            color: #fff;
+            text-align: center;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-top: 20px;
+            animation: fadeInDown 1.2s ease-out;
+        }
+
+        .animated-text {
+            font-size: 1.5rem;
+            animation: fadeInUp 1.2s ease-out;
+            margin: 30px 0;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        ul li {
+            margin: 0;
+        }
+
+        ul li a {
+            text-decoration: none;
+            font-size: 1.2rem;
+            color: #fff;
+            background-color: #0056b3;
+            padding: 15px 25px;
+            border-radius: 10px;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        ul li a:hover {
+            background-color: #004a9f;
+            transform: scale(1.1);
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+    </style>
+</head>
+<body>
+    {% if message %}
+        <h1>Welcome, {{ message }}</h1>
+    {% endif %}
+
+    <p class="animated-text">What service do you want to take?</p>
+    <ul>
+        <li><a href="/ner">NER</a></li>
+        <li><a href="/sentiment_analysis">Sentiment Analysis</a></li>
+        <li><a href="/abuse_detection">Abuse Detection</a></li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abuse Detection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #007BFF, #00d4ff);
+            color: #fff;
+        }
+
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            width: 350px;
+            animation: fadeIn 1.2s ease-in-out;
+        }
+
+        p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            color: #333;
+            text-align: center;
+        }
+
+        textarea {
+            width: 93%;
+            height: 120px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 12px;
+            font-size: 1rem;
+            resize: none;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        textarea:focus {
+            border-color: #007BFF;
+            outline: none;
+            box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 12px 0;
+            margin-top: 15px;
+            border: none;
+            border-radius: 8px;
+            background: linear-gradient(135deg, #007BFF, #0056b3);
+            color: white;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        button:hover {
+            background: linear-gradient(135deg, #0056b3, #003f80);
+            transform: scale(1.05);
+        }
+
+        button:active {
+            background: linear-gradient(135deg, #003f80, #001f40);
+        }
+
+        .title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-align: center;
+            color: #007BFF;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #333;
+        }
+
+        .footer a {
+            color: #007BFF;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer a:hover {
+            color: #0056b3;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <form action="/perform_language_detection" method="post">
+        <div class="title">Language Detection</div>
+        <p>To perform Language Detection, write the prompt and enter</p>
+        <textarea name="prompt" id="prompt" placeholder="Enter your text here..."></textarea>
+        <button type="Submit">Enter</button>
+        <div class="footer">
+            <p>Need help? <a href="https://www.geeksforgeeks.org/hate-speech-detection-using-deep-learning/">Learn More</a></p>
+        </div>
+    </form>
+</body>
+</html>
