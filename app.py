@@ -73,30 +73,29 @@ def sentiment_analysis():
     else:
         return redirect('/')
     
-@app.route('perform_sentiment_analysis',methods=['post'])
+@app.route('/perform_sentiment_analysis',methods=['post'])
 def perform_sentiment_analysis():
     if 'logged_in' in session and session['logged_in'] == 1:
         text = request.form.get('prompt')
         response = api.sentiment_analysis(text)
-        print(response)
         return render_template('sentiment_analysis.html',response=response)
     else:
         return redirect('/')
 
-@app.route('/language_detection')
-def abuse_detection():
+@app.route('/code_generation')
+def language_detection():
     if 'logged_in' in session and session['logged_in'] == 1:
-        return render_template('language_detection.html')
+        return render_template('code_generation.html')
     else:
         return redirect('/')
     
-@app.route('perform_language_detection',methods=['post'])
-def perform_abuse_detection():
+@app.route('/perform_code_generation',methods=['post'])
+def perform_language_detection():
     if 'logged_in' in session and session['logged_in'] == 1:
         text = request.form.get('prompt')
-        response = api.abuse_detection(text)
+        response = api.code_generation(text)
         print(response)
-        return render_template('language_detection.html',response=response)
+        return render_template('code_generation.html',response=response)
     else:
         return redirect('/')
 

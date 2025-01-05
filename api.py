@@ -16,8 +16,9 @@ def sentiment_analysis(text):
     )
     return response
 
-def language_detection(text):
-    client = nlpcloud.Client("python-langdetect", "a738af5249379e544877de7afdc34ab0ec1a198a", gpu=False)
-    client.lang_detection(
+def code_generation(text):
+    client = nlpcloud.Client("finetuned-llama-3-70b", "a738af5249379e544877de7afdc34ab0ec1a198a", gpu=True)
+    response = client.code_generation(
         text
     )
+    return response

@@ -98,6 +98,35 @@
         .footer a:hover {
             color: #0056b3;
         }
+        .response-container {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f9f9f9;
+            border-radius: 12px;
+            border: 1px solid #007BFF;
+            color: #333;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .response-item {
+            padding: 10px;
+            margin-bottom: 10px;
+            background: #eaf4ff;
+            border-radius: 8px;
+            border: 1px solid #0056b3;
+            color: #333;
+            font-size: 1rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .response-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .response-item span {
+            font-weight: bold;
+            color: #007BFF;
+        }
 
         @keyframes fadeIn {
             from {
@@ -121,5 +150,15 @@
             <p>Need help? <a href="https://aws.amazon.com/what-is/sentiment-analysis/">Learn More</a></p>
         </div>
     </form>
+    {% if response %}
+        <div class="response-container">
+            {% for i in response['scored_labels']: %}
+                <div class="response-item">
+                    <p><span>Label:</span> {{ i['label'] }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+
 </body>
 </html>

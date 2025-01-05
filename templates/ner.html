@@ -111,17 +111,24 @@
         }
 
         .response-entity {
-            margin-top: 10px;
-            padding: 10px;
-            background: #f1f1f1;
-            border-radius: 8px;
+            margin-top: 20px;
+            padding: 15px;
+            background: #eaf4ff;
+            border-radius: 10px;
+            border: 1px solid #007BFF;
             color: #333;
             font-size: 1rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 0.8s ease-in-out;
         }
 
         .response-entity span {
             font-weight: bold;
-            color: #007BFF;
+            color: #0056b3;
+        }
+
+        .response-entity + .response-entity {
+            margin-top: 15px;
         }
 
         @keyframes fadeIn {
