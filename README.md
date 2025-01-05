@@ -78,9 +78,6 @@ This project demonstrates the integration of natural language processing (NLP) f
 ## Contribution
 Contributions are welcome! Feel free to fork the repository, make improvements, and submit a pull request.
 
-## License
-This project is licensed under the MIT License. See the `LICENSE` file for details.
-
 ---
 
 **Developed with passion and determination.**
